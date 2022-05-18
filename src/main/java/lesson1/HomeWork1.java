@@ -1,6 +1,7 @@
 package lesson1;
 
-public class HomeWorkApp {
+public class HomeWork1 {
+
     public static void main(String[] args) {
         printThreeWords();
         checkSumSig();
@@ -44,6 +45,6 @@ public class HomeWorkApp {
             System.out.println("a < b");
         }
     }
-
-
 }
+
+
