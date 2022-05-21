@@ -86,9 +86,7 @@ public class HomeWork3 {
         System.out.println();
     }
 
-    // задача 5 - Написать метод, принимающий на вход два аргумента: len и initialValue,
-    // и возвращающий одномерный
-    // массив типа int длиной len, каждая ячейка которого равна initialValue;
+    // задача 5 - Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len, каждая ячейка которого равна initialValue;
 
     private static void initValue() {
         Scanner sc = new Scanner(System.in); // создали сканер
@@ -108,7 +106,7 @@ public class HomeWork3 {
 
     public static int z[] = {8, 44, 6, -11, 4, 2, -8, 6, 29, 30, 34, 3, 6, -9};
 
-    public static void finMax(int[] z) { // создаём метод потска максим.знач. с аргументом массив
+    public static void finMax(int[] z) { // создаём метод поиска максим.знач. с аргументом массив
         int max = z[0];
         for (int i = 0; i < z.length; i++) {
             if (z[i] > max) {
@@ -118,7 +116,7 @@ public class HomeWork3 {
         System.out.println("Максимальное значение массива = " + max + ".");
     }
 
-    public static void finMin(int[] z) { // создаём метод потска миним.знач. с аргументом массив
+    public static void finMin(int[] z) { // создаём метод поиска миним.знач. с аргументом массив
         int min = z[0];
         for (int i = 0; i < z.length; i++) {
             if (z[i] < min) {
@@ -129,9 +127,9 @@ public class HomeWork3 {
     }
 
 
-    // Задача 7** -
+    // Задача 7** - Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
 
-    public static boolean checkBalance(int[] k) { //;
+    public static boolean checkBalance(int[] k) {
         int sum = 0;
         for (int i = 0; i < k.length; i++) {
             sum = sum + k[i];
@@ -150,6 +148,8 @@ public class HomeWork3 {
         }
     }
 
+// Задача 8*** - Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным), при этом метод должен сместить все элементы массива на n позиций. Элементы смещаются циклично.  Для усложнения задачи нельзя пользоваться вспомогательными массивами.   Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2   (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете выбирать сами.
+//
 
     private static void arrayShift() {
         int[] b = new int[100];
