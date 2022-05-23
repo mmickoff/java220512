@@ -14,7 +14,7 @@ public class Lesson3_2_testArray {
 
     private static void testOneArray() {
         int[] data = new int[ARRAY_SIZE];
-        int[] data2 = {1, 2, 3, 4, 5};
+//        int[] data2 = {1, 2, 3, 4, 5};
         data[0] = 3;
         data[2] = 345;
         data[data.length - 1] = 56;
@@ -24,7 +24,7 @@ public class Lesson3_2_testArray {
 //        System.out.println(data[2]);
 //        System.out.println(data[3]);
 //        System.out.println(data[4]);
-
+//
 //        for (int i = 0; i < data.length; i++) {
 //            data[i] *= 2;
 //        }
