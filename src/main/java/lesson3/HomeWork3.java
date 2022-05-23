@@ -152,12 +152,15 @@ public class HomeWork3 {
 //
 
     private static void arrayShift() {
-        int[] b = new int[100];
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер массива");
+        int i1 = scanner.nextInt();
+        int[] b = new int[i1];
         System.out.println("Введите смещение");
         int a1 = -scanner.nextInt();
         for (int i = 0; i < b.length; i++) {
-            b[i] = i + a1;
+            int a2 = a1 % i1;
+            b[i] = i + a2;
             if (b[i] > b.length - 1) {
                 b[i] = b[i] - b.length;
             }
@@ -165,7 +168,7 @@ public class HomeWork3 {
                 b[i] = b[i] + b.length;
             }
             System.out.print(b[i] + "; ");
-            System.out.println();
+//            System.out.println();
         }
 
     }
