@@ -21,11 +21,9 @@ public class Main {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 MAP[i][j]=DOT_EMPTY;
+
             }
         }
 
-        System.out.println(Arrays.toString(MAP));
     }
-
-
 }
