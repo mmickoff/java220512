@@ -1,5 +1,7 @@
 package lesson4;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,8 +23,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-        initMap() ;
+        initMap();
         printMap();
+        playGame();
     }
 
     private static void printMap() {
@@ -55,4 +58,39 @@ public class Main {
             System.out.println();
         }
     }
+
+    private static void playGame() {
+        while (true) {
+            humanTurn();
+            printMap();
+//        конец игры;
+
+            aiTurn();
+            printMap();
+//        конец игры;
+        }
+
+
+    }
+
+    private static void humanTurn() {
+        System.out.println("Ход человека!");
+
+        int rowNumber;
+        int columnNumber;
+
+        System.out.println("Введите номер строки: "); 
+        rowNumber = in.nextInt() - 1;
+        
+        System.out.println("Введите номер столбца: "); 
+        columnNumber = in.nextInt() - 1;
+
+        MAP[rowNumber][columnNumber] = DOT_HUMAN;
+    }
+
+
+    private static void aiTurn() {
+
+    }
+
 }
