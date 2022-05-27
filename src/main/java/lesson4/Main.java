@@ -142,20 +142,19 @@ public class Main {
         if (MAP[2][0] == symbol && MAP[1][1] == symbol && MAP[0][2] == symbol) {
             return true;
         }
-
         return false;
     }
 
     private static boolean checkDraw() {
-        /*for (char[] chars : MAP) {
+       /* for (char[] chars : MAP) {
             for (char symbol : chars) {
-if(symbol == DOT_EMPTY){
-    return false;
-}
+                if (symbol == DOT_EMPTY) {
+                    return false;
+                }
             }
         }
         return false;*/
-return turnsCount >= SIZE * SIZE;
+        return turnsCount >= SIZE * SIZE;
     }
 
     private static boolean isCellFree(int rowNumber, int columnNumber) {
