@@ -22,6 +22,10 @@ public class Main {
     private static int turnsCount = 0;
 
     public static void main(String[] args) {
+        turnGame();
+    }
+
+    public static void turnGame() {
         initMap();
         printMap();
         playGame();
@@ -71,10 +75,7 @@ public class Main {
             if (checkEnd(DOT_AI)) {
                 break;
             }
-
         }
-
-
     }
 
     private static void humanTurn() {
@@ -87,8 +88,18 @@ public class Main {
             System.out.println("Введите номер строки: ");
             rowNumber = in.nextInt() - 1;
 
+            while (rowNumber < 0 || rowNumber > 2){
+                System.out.println("Это значение располагается вне игрового поля... Снова введите номер строки: ");
+                rowNumber = in.nextInt() - 1;
+            }
+
             System.out.println("Введите номер столбца: ");
             columnNumber = in.nextInt() - 1;
+
+            while (columnNumber < 0 || columnNumber > 2) {
+                System.out.println("Это значение располагается вне игрового поля... Снова введите номер строки: ");
+                columnNumber = in.nextInt() - 1;
+            }
 
             if (isCellFree(rowNumber, columnNumber)) {
                 break;
