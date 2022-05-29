@@ -156,6 +156,7 @@ public class Main {
         return false;
     }
 
+
     private static boolean checkDraw() {
        /* for (char[] chars : MAP) {
             for (char symbol : chars) {
