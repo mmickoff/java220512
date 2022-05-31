@@ -1,17 +1,25 @@
 package lesson4;
+
 import java.util.Random;
 import java.util.Scanner;
-public class Main {
-    private static final int SIZE = 3;
+
+public class Main3 {
+
+    private static Scanner in = new Scanner(System.in);
+    private static int size = mapVolume();
+    private static int winLine = winLineVolume();
     private static final char DOT_EMPTY = '-';
     private static final char DOT_HUMAN = 'X';
     private static final char DOT_AI = 'O';
-    private final static char[][] MAP = new char[SIZE][SIZE];
+    private final static char[][] MAP = new char[size][size];
     private static final String HEADER_FIRST_SYMBOL = "*";
     private static final String SPACE_MAP = " ";
-    private static Scanner in = new Scanner(System.in);
+
     private static Random random = new Random();
     private static int turnsCount = 0;
+
+    private static int lastRowNumber;
+    private static int lastColumnNumber;
 
     public static void main(String[] args) {
         turnGame();
@@ -23,9 +31,21 @@ public class Main {
         playGame();
     }
 
+    private static int mapVolume() {
+        System.out.println("Введите размер игрового поля:");
+        size = in.nextByte();
+        return size;
+    }
+
+    private static int winLineVolume() {
+        System.out.println("Введите размер длины победной линии:");
+        winLine = in.nextByte();
+        return winLine;
+    }
+
     private static void initMap() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 MAP[i][j] = DOT_EMPTY;
             }
         }
@@ -38,16 +58,16 @@ public class Main {
 
     private static void printMapHeader() {
         System.out.print(HEADER_FIRST_SYMBOL + SPACE_MAP);
-        for (int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(i + 1 + SPACE_MAP);
         }
         System.out.println();
     }
 
     private static void printMapBody() {
-        for (int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(i + 1 + SPACE_MAP);
-            for (int j = 0; j < SIZE; j++) {
+            for (int j = 0; j < size; j++) {
                 System.out.print(MAP[i][j] + SPACE_MAP);
             }
             System.out.println();
@@ -76,13 +96,13 @@ public class Main {
         while (true) {
             System.out.println("Введите номер строки: ");
             rowNumber = in.nextInt() - 1;
-            while (rowNumber < 0 || rowNumber > 2) {
+            while (rowNumber < 0 || rowNumber > size - 1) {
                 System.out.println("Это значение располагается вне игрового поля... Снова введите номер строки: ");
                 rowNumber = in.nextInt() - 1;
             }
             System.out.println("Введите номер столбца: ");
             columnNumber = in.nextInt() - 1;
-            while (columnNumber < 0 || columnNumber > 2) {
+            while (columnNumber < 0 || columnNumber > size - 1) {
                 System.out.println("Это значение располагается вне игрового поля... Снова введите номер строки: ");
                 columnNumber = in.nextInt() - 1;
             }
@@ -94,6 +114,8 @@ public class Main {
         }
         MAP[rowNumber][columnNumber] = DOT_HUMAN;
         turnsCount++;
+        lastRowNumber = rowNumber;
+        lastColumnNumber = columnNumber;
     }
 
     private static boolean checkEnd(char symbol) {
@@ -113,6 +135,62 @@ public class Main {
     }
 
     private static boolean checkWin(char symbol) {
+
+        int n = 0;
+        int lastRowNumberLeft = lastRowNumber--;
+        int lastColumnNumberLeft = lastColumnNumber--;
+        int lastRowNumberRight = lastRowNumber++;
+        int lastColumnNumberRight = lastColumnNumber++;
+        do {
+            if (MAP[lastRowNumber][lastColumnNumber] == symbol) {
+                lastRowNumberLeft--;
+                lastColumnNumberLeft--;
+                n++;
+            } else {
+                lastRowNumberRight++;
+                lastColumnNumberRight++;
+                n++;
+            }
+        } while (n < winLine);
+
+        do {
+            if (MAP[lastRowNumber][lastColumnNumber] == symbol) {
+                lastRowNumber--;
+                lastColumnNumber++;
+                n++;
+            } else {
+                lastRowNumber++;
+                lastColumnNumber--;
+                n++;
+            }
+        } while (n < winLine);
+
+        do {
+            if (MAP[lastRowNumber][lastColumnNumber] == symbol) {
+                lastRowNumber--;
+                n++;
+            } else {
+                lastRowNumber++;
+                n++;
+            }
+        } while (n < winLine);
+
+        do {
+            if (MAP[lastRowNumber][lastColumnNumber] == symbol) {
+                lastColumnNumber++;
+                n++;
+            } else {
+                lastColumnNumber--;
+                n++;
+            }
+        } while (n < winLine);
+
+        return false;
+    }
+
+
+
+       /* private static boolean checkWin(char symbol) {
         if (MAP[0][0] == symbol && MAP[0][1] == symbol && MAP[0][2] == symbol) {
             return true;
         }
@@ -138,25 +216,18 @@ public class Main {
             return true;
         }
         return false;
-    }
-
-
+    }*/
 
 
     private static boolean checkDraw() {
-       /* for (char[] chars : MAP) {
-            for (char symbol : chars) {
-                if (symbol == DOT_EMPTY) {
-                    return false;
-                }
-            }
-        }
-        return false;*/
-        return turnsCount >= SIZE * SIZE;
+
+        return turnsCount >= size * size;
     }
+
     private static boolean isCellFree(int rowNumber, int columnNumber) {
         return MAP[rowNumber][columnNumber] == DOT_EMPTY;
     }
+
     private static void aiTurn() {
         System.out.println("Ход компьютера!");
         int rowNumber;
@@ -168,8 +239,8 @@ public class Main {
                 break;
             }*/
         do {
-            rowNumber = random.nextInt(SIZE);
-            columnNumber = random.nextInt(SIZE);
+            rowNumber = random.nextInt(size);
+            columnNumber = random.nextInt(size);
         } while (!isCellFree(rowNumber, columnNumber));
         MAP[rowNumber][columnNumber] = DOT_AI;
         turnsCount++;
