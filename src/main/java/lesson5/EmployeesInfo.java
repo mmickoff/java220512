@@ -12,6 +12,12 @@ public class EmployeesInfo {
 
         Employee[] persArray = {person1, person2, person3, person4, person5, person6};
 
+        person1.setPosition("Коммерческий директор");
+        person1.setEmail("mail21@mail.ru");
+        person1.setMoney(155000);
+
+
+
 
 
         /*persArray[0] = person1;
@@ -21,14 +27,6 @@ public class EmployeesInfo {
         persArray[4] = person5;
         persArray[5] = person6;*/
 
-
-       /* newPerson1.printInfo();
-        newPerson2.printInfo();
-        newPerson3.printInfo();
-        newPerson4.printInfo();
-        newPerson5.printInfo();
-        newPerson6.printInfo()*/;
-
 //    newPerson1 = Employee("Иванов Иван Петрович");
 
         /*persArray[0] = newPerson1("Иванов Иван Петрович");
@@ -37,9 +35,7 @@ public class EmployeesInfo {
         persArray[3] = newPerson4("Иванов Иван Петрович");
         persArray[4] = newPerson5("Иванов Иван Петрович");
         persArray[5] = newPerson6("Иванов Иван Петрович");*/
-    /*public Employee getNewPerson1() {
-        return newPerson1;
-    }*/
+
     }
 
 
