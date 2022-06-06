@@ -25,15 +25,17 @@ public class EmployeesInfo {
         person5.printInfo();
         person6.printInfo();
 
-        public static void printInfoFirm(Employee){
-            Employee.employees[]
+        System.out.printf(Arrays.toString(persArray));
+
+        /*public static void printInfoFirm(Employee){
+            Employee.employees[];
             for (int i = 0; i < persArray.length; i++) {
                 if (age < 40) {
-                    System.out.printf(Arrays.toString());
+                    System.out.printf(Arrays.toString(persArray));
                 }else{
                 }
             }
-        }
+        }*/
     }
 }
 
