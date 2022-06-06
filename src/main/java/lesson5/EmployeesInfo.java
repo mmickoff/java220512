@@ -13,16 +13,27 @@ public class EmployeesInfo {
         Employee person6 = new Employee("Иванов Пётр Иванович");
 
         person1.setPosition("Коммерческий директор");
-        person1.setEmail("mail21@mail.ru");
+        person2.setEmail("mail21@mail.ru");
+        person3.setEmail("mail24@mail.ru");
+        person4.setEmail("mail27@mail.ru");
+        person5.setEmail("mail29@mail.ru");
+        person6.setEmail("mail31@mail.ru");
         person1.setMoney(155000);
         person1.setAge(33);
+        person2.setAge(30);
+        person5.setAge(37);
 
-        person1.ageLimitForPrintData();
+        Employee ageLimitForPrintData;
+        Employee[] persArray = {person1, person2, person3, person4, person5, person6};
+        for (int i = 0; i < persArray.length; i++) {
+            Employee.ageLimitForPrintData();
+        }
+        /*person1.ageLimitForPrintData();
         person2.ageLimitForPrintData();
         person3.ageLimitForPrintData();
         person4.ageLimitForPrintData();
         person5.ageLimitForPrintData();
-        person6.ageLimitForPrintData();
+        person6.ageLimitForPrintData();*/
     }
 //        printInfoFirm ();
         /*Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
