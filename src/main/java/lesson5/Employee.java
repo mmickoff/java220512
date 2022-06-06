@@ -19,6 +19,9 @@ public class Employee {
         this.age = age;
     }
 
+    Employee[] employees = {"fullName", "position", "email", "telephoneNumber", money, age};
+//            new Employee[6];
+
     public Employee(String fullName) {
         this(fullName, "Офисный работник", "mail@mail.ru", "89034563456", 120000, 43);
     }
