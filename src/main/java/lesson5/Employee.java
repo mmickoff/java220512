@@ -2,12 +2,12 @@ package lesson5;
 
 public class Employee {
 
-    private final String fullName;
-    private String position;
-    private String email;
-    private String telephoneNumber;
-    private int money;
-    private int age;
+    final String fullName;
+    String position;
+    String email;
+    String telephoneNumber;
+    int money;
+    int age;
 
 
     public Employee(String fullName, String position, String email, String telephoneNumber, int money, int age) {
@@ -22,6 +22,7 @@ public class Employee {
     public Employee(String fullName) {
         this(fullName, "Офисный работник", "mail@mail.ru", "89034563456", 120000, 43);
     }
+
 
     public void printInfo() {
         System.out.print(this.toString());

@@ -1,5 +1,7 @@
 package lesson5;
 
+import java.util.Arrays;
+
 public class EmployeesInfo {
     public static void main(String[] args) {
 
@@ -16,18 +18,33 @@ public class EmployeesInfo {
         person1.setEmail("mail21@mail.ru");
         person1.setMoney(155000);
 
+        person1.printInfo();
+        person2.printInfo();
+        person3.printInfo();
+        person4.printInfo();
+        person5.printInfo();
+        person6.printInfo();
 
+        /*public static void printInfoFirm(Employee){
+            for (int i = 0; i < persArray.length; i++) {
+                if (age < 40) {
+                    System.out.printf(Arrays.toString());
+                }else{
+                }
+            }
+        }*/
+    }
+}
 
+//        printInfoFirm(Employee[]persArray);
+//        public static String printInfoFirm(Employee[]persArray){
 
-
-        /*persArray[0] = person1;
+/*persArray[0] = person1;
         persArray[1] = person2;
         persArray[2] = person3;
         persArray[3] = person4;
         persArray[4] = person5;
         persArray[5] = person6;*/
-
-//    newPerson1 = Employee("Иванов Иван Петрович");
 
         /*persArray[0] = newPerson1("Иванов Иван Петрович");
         persArray[1] = newPerson2("Иванов Иван Петрович");
@@ -36,8 +53,19 @@ public class EmployeesInfo {
         persArray[4] = newPerson5("Иванов Иван Петрович");
         persArray[5] = newPerson6("Иванов Иван Петрович");*/
 
+/*    }
+
+    private static void printInfo() {
+
     }
 
+    public static void printInfoFirm(String[] persArray){
+    Employee[] persArray = new Employee[];
+
+    *//*for (int i = 0; i < persArray.length; i++) {
+        if(age < 40){
+            printInfo()
+        }
+    }*//**/
 
 
-}
