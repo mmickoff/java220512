@@ -17,6 +17,14 @@ public class EmployeesInfo {
         person1.setMoney(155000);
         person1.setAge(33);
 
+        person1.ageLimitForPrintData();
+        person2.ageLimitForPrintData();
+        person3.ageLimitForPrintData();
+        person4.ageLimitForPrintData();
+        person5.ageLimitForPrintData();
+        person6.ageLimitForPrintData();
+    }
+//        printInfoFirm ();
         /*Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
         for (int i = 0; i < persArray.length; i++) {
             for (int j = 0; j < persArray.length; j++) {
@@ -26,13 +34,21 @@ public class EmployeesInfo {
                     System.out.println();
                 }*/
 
-        if(person1.getAge < 40)
+/*public static void printInfoFirm () {
+    Employee person1 = new Employee("Иванов Иван Иванович");
+    Employee person2 = new Employee("Петров Пётр Петрович");
+    Employee person3 = new Employee("Петров Иван Петрович");
+    Employee person4 = new Employee("Иванов Пётр Петрович");
+    Employee person5 = new Employee("Петров Иван Иванович");
+    Employee person6 = new Employee("Иванов Пётр Иванович");
+        if (person1.getAge < 40) {
             person1.printInfo();
+        }
         person2.printInfo();
         person3.printInfo();
         person4.printInfo();
         person5.printInfo();
-        person6.printInfo();
+        person6.printInfo();*/
 //                System.out.printf(Arrays.toString(persArray));
 
         /*public static void printInfoFirm () {
@@ -41,11 +57,6 @@ public class EmployeesInfo {
                     if (Employee[i][6] < 40) {
                         new Employee.pintInfo;*/
 //                    System.out.printf(Arrays.toString(persArray));
-
-            }
-        }
-    }
-}
 
 
 //        printInfoFirm(Employee[]persArray);
@@ -80,4 +91,4 @@ public class EmployeesInfo {
         }
     }*//**/
 
-
+}
