@@ -23,10 +23,12 @@ public class EmployeesInfo {
         person2.setAge(30);
         person5.setAge(37);
 
-        Employee ageLimitForPrintData;
+        Employee ageLimitForPrintData(int getAge);
+
         Employee[] persArray = {person1, person2, person3, person4, person5, person6};
         for (int i = 0; i < persArray.length; i++) {
-            Employee.ageLimitForPrintData();
+            ageLimitForPrintData();
+
         }
         /*person1.ageLimitForPrintData();
         person2.ageLimitForPrintData();
@@ -34,6 +36,10 @@ public class EmployeesInfo {
         person4.ageLimitForPrintData();
         person5.ageLimitForPrintData();
         person6.ageLimitForPrintData();*/
+    }
+
+    private static void ageLimitForPrintData() {
+        Employee.ageLimitForPrintData(int setAge);
     }
 //        printInfoFirm ();
         /*Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
