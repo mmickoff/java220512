@@ -12,30 +12,36 @@ public class EmployeesInfo {
         Employee person5 = new Employee("Петров Иван Иванович");
         Employee person6 = new Employee("Иванов Пётр Иванович");
 
-        Employee[] persArray = {person1, person2, person3, person4, person5, person6};
-
         person1.setPosition("Коммерческий директор");
         person1.setEmail("mail21@mail.ru");
         person1.setMoney(155000);
+        person1.setAge(33);
 
-        person1.printInfo();
+        Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
+        for (int i = 0; i < persArray.length; i++) {
+            for (int j = 0; j < persArray.length; j++) {
+                if (persArray[i][6] < 40) {
+                    Employee.printInfo();
+                } else {
+                    System.out.println();
+                }
+
+        /*person1.printInfo();
         person2.printInfo();
         person3.printInfo();
         person4.printInfo();
         person5.printInfo();
         person6.printInfo();
+*/
+                System.out.printf(Arrays.toString(persArray));
 
-        System.out.printf(Arrays.toString(persArray));
-
-        public static void printInfoFirm(){
+        /*public static void printInfoFirm () {
             for (int i = 0; i < persArray.length; i++) {
                 for (int j = 0; j < 6; j++) {
+                    if (Employee[i][6] < 40) {
+                        new Employee.pintInfo;*/
+//                    System.out.printf(Arrays.toString(persArray));
 
-                }
-                if (Employee[i][6] < 40) {
-                    System.out.printf(Arrays.toString(persArray));
-                }else{
-                }
             }
         }
     }
