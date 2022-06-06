@@ -23,7 +23,6 @@ public class Employee {
         this(fullName, "Офисный работник", "mail@mail.ru", "89034563456", 120000, 43);
     }
 
-
     public void printInfo() {
         System.out.print(this.toString());
     }
@@ -31,7 +30,6 @@ public class Employee {
     public String toString() {
         return String.format("Гражданин %s, возраст %s г/л, состоящий на должности %s, доступный по @-mail %s и т.ф. %s, получает зарплату %d%n", fullName, age, position, email, telephoneNumber, money);
     }
-
 
     public void setPosition(String position) {
         this.position = position;
