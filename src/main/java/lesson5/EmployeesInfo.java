@@ -17,23 +17,23 @@ public class EmployeesInfo {
         person1.setMoney(155000);
         person1.setAge(33);
 
-        Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
+        /*Employee[][] persArray = {person1, person2, person3, person4, person5, person6};
         for (int i = 0; i < persArray.length; i++) {
             for (int j = 0; j < persArray.length; j++) {
                 if (persArray[i][6] < 40) {
                     Employee.printInfo();
                 } else {
                     System.out.println();
-                }
+                }*/
 
-        /*person1.printInfo();
+        if(person1.getAge < 40)
+            person1.printInfo();
         person2.printInfo();
         person3.printInfo();
         person4.printInfo();
         person5.printInfo();
         person6.printInfo();
-*/
-                System.out.printf(Arrays.toString(persArray));
+//                System.out.printf(Arrays.toString(persArray));
 
         /*public static void printInfoFirm () {
             for (int i = 0; i < persArray.length; i++) {
