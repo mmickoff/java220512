@@ -31,7 +31,6 @@ public class Employee {
         return String.format("Гражданин %s, возраст %s г/л, состоящий на должности %s, доступный по @-mail %s и т.ф. %s, получает зарплату %d%n", fullName, age, position, email, telephoneNumber, money);
     }
 
-
     public void ageLimitForPrintData(){
         if(age < 40){
             printInfo();
