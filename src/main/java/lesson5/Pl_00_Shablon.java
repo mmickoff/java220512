@@ -66,4 +66,6 @@ public class Pl_00_Shablon {
     public void setColorsss(String colorsss) {
         this.colorsss = colorsss;
     }
+
+
 }

@@ -18,6 +18,9 @@ public class Pl_01_Objects {
         for (Pl_00_Shablon arrr : arrObjects) {
             arrr.pointsLimitPrintData();
         }
+        for (int i = 0; i < arrObjects.length; i++) {
+            arrObjects[i].pointsLimitPrintData();
+        }
     }
 
 }
