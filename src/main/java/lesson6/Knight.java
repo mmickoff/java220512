@@ -8,15 +8,13 @@ public class Knight extends Player {
         this.swordTitle = swordTitle;
     }
 
-
-
     /*public Knight(String nickmame, int point, String russianProfessionTitle, String swordTitle){
         this(nickmame, point, swordTitle);
     }*/
 
-
-    public void doAction() {
+        public void doAction() {
         System.out.printf("%s %s машет мечом %s", getRussianProfessionTitle(), getNickname(), getSwordTitle() );
+        /*System.out.printf(getRussianProfessionTitle());*/
         System.out.println();
         super.doAction();
     }
@@ -35,4 +33,3 @@ public class Knight extends Player {
         this.swordTitle = swordTitle;
     }
 }
-

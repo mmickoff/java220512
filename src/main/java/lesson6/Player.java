@@ -4,7 +4,7 @@ public class Player {
 
     private String nickname;
     private int point;
-    protected String russianProfessionTitle;
+    /*protected*/ private String russianProfessionTitle;
 
     public Player(String nickname, int point, String russianProfessionTitle) {
         this.nickname = nickname;
