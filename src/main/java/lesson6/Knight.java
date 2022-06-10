@@ -16,7 +16,7 @@ public class Knight extends Player {
         System.out.printf("%s %s машет мечом %s", getRussianProfessionTitle(), getNickname(), getSwordTitle() );
         /*System.out.printf(getRussianProfessionTitle());*/
         System.out.println();
-        super.doAction();
+       /* super.doAction();*/
     }
 
 
