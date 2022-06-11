@@ -7,16 +7,21 @@ public class Dog extends Animal {
     private int runningLimitForADog;
     private int swimmingLimitForADog;
 
-    public Dog(String nickname, String animalType, int trackLength, int runTrack, int swimmingTrack, int runningLimitForADog, int swimmingLimitForADog) {
-        super(nickname, animalType, trackLength, runTrack);
+    Random random = new Random();
+
+    public Dog(String nickname, String animalType, int trackLength, int runningTrack, int swimmingTrack, int runningLimitForADog, int swimmingLimitForADog) {
+        super(nickname, animalType, trackLength, runningTrack);
         this.swimmingTrack = this.swimmingTrack;
         this.runningLimitForADog = runningLimitForADog;
         this.swimmingLimitForADog = swimmingLimitForADog;
+        runningTrack = random.nextInt(runningLimitForADog);
+        swimmingTrack = random.nextInt(swimmingLimitForADog);
     }
 
     public Dog(String nickname) {
         this(nickname, "Пёс", 1, 1, 1, 500, 10);
     }
+
 
   /*  public Dog(String nickname, String animalTip, int trackLength, int runTrack) {
         super(nickname, animalTip, trackLength, runTrack); }*/
@@ -27,14 +32,17 @@ public class Dog extends Animal {
 
     @Override
     public void doAction() {
-        Random random = new Random();
+        super.doRun();
+        super.doSwim();
+    }
+        /*Random random = new Random();
         int runTrack = random.nextInt(runningLimitForADog);
         if (runTrack < runningLimitForADog) {
             System.out.printf("Пёс %s пробежал %s метров.%n", getNickname(), runTrack);
         }
-        int sw
-        
-    }
+        int sw*/
+
+
 
 
 }
