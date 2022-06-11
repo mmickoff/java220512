@@ -3,18 +3,21 @@ package lesson6_1;
 public class Main {
     public static void main(String[] args) {
 
-            Cat catMarsiсk = new Cat("Marsik", 15, 500, 10);
-            Cat catFuntick = new Cat("Funtick", "Syam", 5, "beige", 15, 500, 10);
+        Cat catMarsiсk = new Cat("Марсик");
+        Cat catFuntick = new Cat("Фунтик");
 
-            Dog dogBobik = new Dog("Пёс", "Бобик",
-
-
-
-
-            dog.printInfo;
-        catMarsiсk.printInfo;
-        catFuntick.printInfo;
+        Dog dogBobiсk = new Dog("Бобик");
+        Dog dogTuziсk = new Dog("Тузик");
 
 
+
+        catMarsiсk.printInfo();
+        catFuntick.printInfo();
+
+
+        dogBobiсk.printInfo();
+        dogTuziсk.printInfo();
     }
+
 }
+

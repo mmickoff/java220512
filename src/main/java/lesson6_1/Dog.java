@@ -1,25 +1,33 @@
 package lesson6_1;
 
 public class Dog extends Animal {
+    private int swimmingTrack;
     private int runningLimitForADog;
     private int swimmingLimitForADog;
 
-    public Dog(String animalTipe, String nickname, int runTrack, int swimmTrack) {
-        super("Пёс", nickname, runTrack, swimmTrack, runningLimitForADog, swimmingLimitForADog);
+    public Dog(String nickname, String animalType, int trackLength, int runTrack, int swimmingTrack, int runningLimitForADog, int swimmingLimitForADog) {
+        super(nickname, animalType, trackLength, runTrack);
+        this.swimmingTrack = this.swimmingTrack;
         this.runningLimitForADog = runningLimitForADog;
         this.swimmingLimitForADog = swimmingLimitForADog;
     }
 
+    public Dog(String nickname) {
+        this(nickname, "Пёс", 1, 1, 1, 500, 10);
+    }
 
-    @Override
+  /*  public Dog(String nickname, String animalTip, int trackLength, int runTrack) {
+        super(nickname, animalTip, trackLength, runTrack); }*/
+
     public String toString() {
         return super.toString();
     }
 
     @Override
-    public void doAction(){
-        if(getRunTrack() < runningLimitForADog)
-    System.out.printf("Пёс %s пробежал %s метров.%n", getNickname(), getRunTrack());
-}
+    public void doAction() {
+        if (getRunTrack() < runningLimitForADog)
+            System.out.printf("Пёс %s пробежал %s метров.%n", getNickname(), getRunTrack());
+    }
+
 
 }
