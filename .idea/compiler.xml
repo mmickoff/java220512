@@ -10,6 +10,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-220512" target="17" />
+      <module name="java220512" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
