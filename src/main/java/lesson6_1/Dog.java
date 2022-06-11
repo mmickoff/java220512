@@ -1,5 +1,7 @@
 package lesson6_1;
 
+import java.util.Random;
+
 public class Dog extends Animal {
     private int swimmingTrack;
     private int runningLimitForADog;
@@ -25,8 +27,13 @@ public class Dog extends Animal {
 
     @Override
     public void doAction() {
-        if (getRunTrack() < runningLimitForADog)
-            System.out.printf("Пёс %s пробежал %s метров.%n", getNickname(), getRunTrack());
+        Random random = new Random();
+        int runTrack = random.nextInt(runningLimitForADog);
+        if (runTrack < runningLimitForADog) {
+            System.out.printf("Пёс %s пробежал %s метров.%n", getNickname(), runTrack);
+        }
+        int sw
+        
     }
 
 

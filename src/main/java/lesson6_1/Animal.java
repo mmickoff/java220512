@@ -5,7 +5,7 @@ public abstract class Animal {
     private String nickname;
     private int trackLength;
     private int runTrack;
-    private int swimmingTrack;
+//    private int swimmingTrack;
 
     public Animal(String nickname, String animalType, int trackLength, int runTrack) {
         this.animalType = animalType;
@@ -73,7 +73,7 @@ public abstract class Animal {
         this.trackLength = trackLength;
     }
 
-    public void setRunTrack(int runTrack) {
+    public void setRunTrack() {
         this.runTrack = runTrack;
     }
 
