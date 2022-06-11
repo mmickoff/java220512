@@ -10,13 +10,17 @@ public class Main {
         Dog dogTuziсk = new Dog("Тузик");
 
 
+//        catMarsiсk.printInfo();
+//        catFuntick.printInfo();
+        catMarsiсk.doAction();
+        catFuntick.doAction();
 
-        catMarsiсk.printInfo();
-        catFuntick.printInfo();
 
+//        dogBobiсk.printInfo();
+//        dogTuziсk.printInfo();
+        dogBobiсk.doAction();
+        dogTuziсk.doAction();
 
-        dogBobiсk.printInfo();
-        dogTuziсk.printInfo();
     }
 
 }

@@ -14,14 +14,10 @@ public class Cat extends Animal {
         runningTrack = random.nextInt(runningLimitForACat);
     }
 
-//        this.swimmingLimitForACat = swimmingLimitForACat;
-//    , int swimmingLimitForACat
-
     public Cat(String nickname) {
-        this(nickname, "Кот", 1, 1, 200)
-
-    ;}
-
+        /*int runningTrack = random.nextInt(runningLimitForACat);*/
+        this(nickname, "Кот", 1, super.getRunningTrack(), 200);
+    }
 
     @Override
     public void doAction() {

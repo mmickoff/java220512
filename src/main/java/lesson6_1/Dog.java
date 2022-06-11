@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Dog extends Animal {
     private int swimmingTrack;
-    private int runningLimitForADog;
-    private int swimmingLimitForADog;
+    private final int runningLimitForADog;
+    private final int swimmingLimitForADog;
 
     Random random = new Random();
 
@@ -19,7 +19,7 @@ public class Dog extends Animal {
     }
 
     public Dog(String nickname) {
-        this(nickname, "Пёс", 1, 1, 1, 500, 10);
+        this(nickname, "Пёс", 1, getRunningTrack(), swimmingTrack, 500, 10);
     }
 
 
@@ -32,6 +32,7 @@ public class Dog extends Animal {
 
     @Override
     public void doAction() {
+
         super.doRun();
         super.doSwim();
     }

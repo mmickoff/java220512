@@ -17,8 +17,8 @@ public abstract class Animal {
         this.nickname = nickname;
         this.trackLength = trackLength;
         this.runningTrack = runningTrack;
-          this.swimmingTrack = swimmingTrack;
-//        int swimmTrack;
+//          this.swimmingTrack = swimmingTrack;
+//        int swimmingTrack;
 
     }
 
@@ -26,7 +26,7 @@ public abstract class Animal {
     public abstract void doAction();
 
     public void doRun() {
-       runningTrack = random.nextInt();
+        runningTrack = random.nextInt();
         System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack);
     }
 
@@ -35,7 +35,7 @@ public abstract class Animal {
         System.out.printf("%s %s проплыл %s метров%n", animalType, nickname);
     }
 
-    public void printInfo() {
+   /* public void printInfo() {
         System.out.println(this.toString());
     }
 
@@ -45,7 +45,7 @@ public abstract class Animal {
                 nickname +
                 "пробежал" + runningTrack +
                 '}');
-    }
+    }*/
 
 
     public String getAnimalType() {
@@ -64,9 +64,9 @@ public abstract class Animal {
         return runningTrack;
     }
 
-//    public int getSwimmingTrack() {
-//        return swimmingTrack;
-//    }
+    public int getSwimmingTrack() {
+        return swimmingTrack;
+    }
 
     public void setAnimalType(String animalType) {
         this.animalType = animalType;
@@ -80,12 +80,12 @@ public abstract class Animal {
         this.trackLength = trackLength;
     }
 
-    public void setRunTrack() {
+    public void setRunningTrack() {
         this.runningTrack = runningTrack;
     }
 
-//    public void setSwimmingTrack(int swimmingTrack) {
-//        this.swimmingTrack = swimmingTrack;
-//    }
+    public void setSwimmingTrack(int swimmingTrack) {
+        this.swimmingTrack = swimmingTrack;
+    }
 
 }
