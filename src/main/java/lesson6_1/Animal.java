@@ -6,19 +6,17 @@ import java.util.Random;
 public abstract class Animal {
     private String animalType;
     private String nickname;
-    private int trackLength;
-    private int runningTrack;
-    private int swimmingTrack;
+    private int runningTrack; // дистанция забега
+    private int swimmingTrack; // дистаниция заплыва
 
     Random random = new Random();
 
-    public Animal(String nickname, String animalType, int trackLength, int runningTrack) {
+    public Animal(String nickname, String animalType, int runningTrack, int swimmingTrack) {
         this.animalType = animalType;
         this.nickname = nickname;
-        this.trackLength = trackLength;
         this.runningTrack = runningTrack;
 //          this.swimmingTrack = swimmingTrack;
-//        int swimmingTrack;
+        this.swimmingTrack = swimmingTrack;
 
     }
 
@@ -32,7 +30,7 @@ public abstract class Animal {
 
     public void doSwim() {
         swimmingTrack = random.nextInt();
-        System.out.printf("%s %s проплыл %s метров%n", animalType, nickname);
+        System.out.printf("%s %s проплыл %s метров%n", animalType, nickname, swimmingTrack);
     }
 
    /* public void printInfo() {
@@ -56,9 +54,9 @@ public abstract class Animal {
         return nickname;
     }
 
-    public int getTrackLength() {
-        return trackLength;
-    }
+//    public int getTrackLength() {
+//        return trackLength;
+//    }
 
     public int getRunningTrack() {
         return runningTrack;
@@ -76,9 +74,9 @@ public abstract class Animal {
         this.nickname = nickname;
     }
 
-    public void setTrackLength(int trackLength) {
-        this.trackLength = trackLength;
-    }
+//    public void setTrackLength(int trackLength) {
+//        this.trackLength = trackLength;
+//    }
 
     public void setRunningTrack() {
         this.runningTrack = runningTrack;
@@ -87,5 +85,6 @@ public abstract class Animal {
     public void setSwimmingTrack(int swimmingTrack) {
         this.swimmingTrack = swimmingTrack;
     }
+
 
 }
