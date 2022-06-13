@@ -12,6 +12,7 @@ public abstract class Animal {
 
     Random random = new Random(); // рандомизатор в классе
 
+
     public Animal(String nickname, String animalType, int runningLimit, int runningTrack/*, int swimmingTrack*/) { //конструктор
         this.animalType = animalType;
         this.nickname = nickname;

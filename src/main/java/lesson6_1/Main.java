@@ -14,7 +14,6 @@ public class Main {
         catMarsiсk.doAction();
         catFuntick.doAction();
 
-
 //        dogBobiсk.printInfo();
 //        dogTuziсk.printInfo();
         dogBobiсk.doAction();
