@@ -27,8 +27,8 @@ public abstract class Animal {
     public abstract void doAction(); // метод, обязательный для обоих классов/животных
 
     public void doRun(int runningTrack) { // метод бег - для обоих животных
-        this.runningTrack = random.nextInt(runningLimit); // рандомизируем длину пробежки
-        System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, this.runningTrack); // выводим, сколько пробежало животное
+//        this.runningTrack = random.nextInt(runningLimit); // рандомизируем длину пробежки
+        System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack); // выводим, сколько пробежало животное
     }
 
 

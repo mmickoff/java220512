@@ -22,7 +22,6 @@ public class Cat extends Animal {
             int runningTrack = random.nextInt(runningLimit);
             super.doRun(runningTrack);
 
-
     }
 
 }
