@@ -3,25 +3,30 @@ package lesson6_1;
 import java.util.Random;
 
 public class Cat extends Animal {
-    private int runningLimitForACat;
+//    private int runningLimit;
 
 
     Random random = new Random();
 
-    public Cat(String nickname, String animalType,  int runningLimitForACat, int runningTrack/*, int swimmingTrack*/) {
-        super(nickname, animalType, runningTrack);
-        this.runningLimitForACat = runningLimitForACat;
+    public Cat(String nickname, String animalType, int runningLimit, int runningTrack) {
+        super(nickname, animalType, runningLimit, runningTrack);
+//        this.runningLimit = runningLimit;
     }
+
 
     public Cat(String nickname) {
-        Random random = new Random(runningLimitForACat);
-        int runningTrack = random.nextInt(runningLimitForACat);
-        this(nickname, "Кот", 150, runningTrack);
+        this(nickname, "Кот", 150, 25);
+    }
+        @Override
+        public void doAction() {
+            int runningTrack = random.nextInt(runningLimit);
+            super.doRun(runningTrack);
+
 
     }
 
-    @Override
+   /* @Override
     public void doAction() {
-        super.doRun();
-    }
+        super.doRun(runningTrack);
+    }*/
 }

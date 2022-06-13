@@ -20,6 +20,8 @@ public class Main {
         dogBobiсk.doAction();
         dogTuziсk.doAction();
 
+//        Animal[] animals =
+
     }
 
 }
