@@ -23,7 +23,6 @@ public abstract class Animal {
 
     }
 
-
     public abstract void doAction(); // метод, обязательный для обоих классов/животных
 
     public void doRun(int runningTrack) { // метод бег - для обоих животных

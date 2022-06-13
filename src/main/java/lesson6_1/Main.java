@@ -22,6 +22,5 @@ public class Main {
 //        Animal[] animals =
 
     }
-
 }
 
