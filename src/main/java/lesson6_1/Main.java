@@ -19,8 +19,12 @@ public class Main {
         dogBobiсk.doAction();
         dogTuziсk.doAction();
 
-//        Animal[] animals =
+        Animal[] animals = {catFuntick, catMarsiсk, dogBobiсk, dogTuziсk};
+        for (Animal animal : animals) {
+
+        }
 
     }
 }
+
 
