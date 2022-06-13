@@ -14,13 +14,14 @@ public class Cat extends Animal {
     }
 
     public Cat(String nickname) {
-        this(nickname, "Кот", 150, 25);
+        this(nickname, "Кот", 200, 25);
     }
-        @Override
-        public void doAction() {  // метод для описания собачьих достижений
-            int runningTrack = random.nextInt(runningLimit);
-            super.doRun(runningTrack);
 
-    }
+    /*@Override
+    public void doAction() {  // метод для описания собачьих достижений
+        int runningTrack = random.nextInt(runningLimit);
+        super.doRun(runningTrack);
+
+    }*/
 
 }

@@ -23,15 +23,20 @@ public abstract class Animal {
 
     }
 
-    public abstract void doAction(); // метод, обязательный для обоих классов/животных
+    public void doAction(){
+        int runningTrack = random.nextInt(runningLimit) + 105;
+        doRun();
+    }; // метод, обязательный для обоих классов/животных
 
-    public void doRun(int runningTrack) { // метод бег - для обоих животных
+
+    public void doRun() { // метод бег - для обоих животных
 //        this.runningTrack = random.nextInt(runningLimit); // рандомизируем длину пробежки
-        System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack); // выводим, сколько пробежало животное
+        if (runningTrack < runningLimit) {
+            System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack); // выводим, сколько пробежало животное
+        }else{
+            System.out.printf("%s %s не мог пробежать %s метров%n", animalType, nickname, runningTrack);
+        }
     }
-
-
-
 
    /* public void printInfo() {
         System.out.println(this.toString());
@@ -45,7 +50,7 @@ public abstract class Animal {
                 '}');
     }*/
 
-    // создаём геттеры и сеттеры на тип, имя животного и длину пробежки
+    // создаём геттеры и сеттеры на тип b имя животного
     public String getAnimalType() {
         return animalType;
     }
@@ -54,15 +59,15 @@ public abstract class Animal {
         return nickname;
     }
 
-    public int getRunningTrack() {
+  /*  public int getRunningTrack() {
         return runningTrack;
     }
 
 //    public int getSwimmingTrack() {
 //        return swimmingTrack;
-//    }
+//    }*/
 
-    public void setAnimalType(String animalType) {
+  /*  public void setAnimalType(String animalType) {
         this.animalType = animalType;
     }
 
@@ -73,7 +78,7 @@ public abstract class Animal {
 
     public void setRunningTrack() {
         this.runningTrack = runningTrack;
-    }
+    }*/
 
 
 }
