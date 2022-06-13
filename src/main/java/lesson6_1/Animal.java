@@ -7,16 +7,15 @@ public abstract class Animal {
     private String animalType;
     private String nickname;
     private int runningTrack; // дистанция забега
-    private int swimmingTrack; // дистаниция заплыва
+    /*private int swimmingTrack;*/ // дистаниция заплыва
 
     Random random = new Random();
 
-    public Animal(String nickname, String animalType, int runningTrack, int swimmingTrack) {
+    public Animal(String nickname, String animalType, int runningTrack/*, int swimmingTrack*/) {
         this.animalType = animalType;
         this.nickname = nickname;
         this.runningTrack = runningTrack;
-//          this.swimmingTrack = swimmingTrack;
-        this.swimmingTrack = swimmingTrack;
+//      this.swimmingTrack = swimmingTrack;
 
     }
 
@@ -29,7 +28,7 @@ public abstract class Animal {
     }
 
     public void doSwim() {
-        swimmingTrack = random.nextInt();
+        int swimmingTrack = random.nextInt();
         System.out.printf("%s %s проплыл %s метров%n", animalType, nickname, swimmingTrack);
     }
 
@@ -54,17 +53,13 @@ public abstract class Animal {
         return nickname;
     }
 
-//    public int getTrackLength() {
-//        return trackLength;
-//    }
-
     public int getRunningTrack() {
         return runningTrack;
     }
 
-    public int getSwimmingTrack() {
-        return swimmingTrack;
-    }
+//    public int getSwimmingTrack() {
+//        return swimmingTrack;
+//    }
 
     public void setAnimalType(String animalType) {
         this.animalType = animalType;
@@ -74,17 +69,14 @@ public abstract class Animal {
         this.nickname = nickname;
     }
 
-//    public void setTrackLength(int trackLength) {
-//        this.trackLength = trackLength;
-//    }
 
     public void setRunningTrack() {
         this.runningTrack = runningTrack;
     }
 
-    public void setSwimmingTrack(int swimmingTrack) {
-        this.swimmingTrack = swimmingTrack;
-    }
+//    public void setSwimmingTrack(int swimmingTrack) {
+//        this.swimmingTrack = swimmingTrack;
+//    }
 
 
 }

@@ -8,15 +8,16 @@ public class Cat extends Animal {
 
     Random random = new Random();
 
-    public Cat(String nickname, String animalType,  int runningTrack, int swimmingTrack, int runningLimitForACat) {
-        super(nickname, animalType, runningTrack, swimmingTrack);
+    public Cat(String nickname, String animalType,  int runningLimitForACat, int runningTrack/*, int swimmingTrack*/) {
+        super(nickname, animalType, runningTrack);
         this.runningLimitForACat = runningLimitForACat;
     }
 
     public Cat(String nickname) {
-        Random random = new Random();
-        /*int runningTrack = random.nextInt(getRunningLimitForACat);*/
-        this(nickname, "Кот", random.nextInt(getRunningLimitForACat), 200);
+        Random random = new Random(runningLimitForACat);
+        int runningTrack = random.nextInt(runningLimitForACat);
+        this(nickname, "Кот", 150, runningTrack);
+
     }
 
     @Override
