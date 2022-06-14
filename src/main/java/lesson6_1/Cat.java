@@ -13,6 +13,7 @@ public class Cat extends Animal {
         this.runningLimit = runningLimit;
     }
 
+
     public Cat(String nickname) {
         this(nickname, "Кот", 200, 25);
     }

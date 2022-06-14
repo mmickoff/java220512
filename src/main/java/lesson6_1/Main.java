@@ -1,5 +1,7 @@
 package lesson6_1;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -20,8 +22,20 @@ public class Main {
         dogTuziсk.doAction();
 
         Animal[] animals = {catFuntick, catMarsiсk, dogBobiсk, dogTuziсk};
-        for (Animal animal : animals) {
+        /* for (int i = 0; i < animals.length; i++) {*/
 
+        for (int i = 0; i < animals.length; i++) {
+            System.out.printf(i + 1 + ") " + animals[i]);
+            System.out.println();
+        }
+
+        System.out.printf("...или...%n");
+
+        int i = 0;
+        for (Animal animal : animals) {
+//            i++;
+            System.out.printf(++i + ") ");
+            animal.printInfo();
         }
 
     }

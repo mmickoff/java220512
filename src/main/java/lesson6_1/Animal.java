@@ -38,17 +38,15 @@ public abstract class Animal {
         }
     }
 
-   /* public void printInfo() {
+    public void printInfo() {
         System.out.println(this.toString());
     }
 
     @Override
     public String toString() {
         return String.format(animalType +
-                nickname +
-                "пробежал" + runningTrack +
-                '}');
-    }*/
+                nickname + ".");
+    }
 
     // создаём геттеры и сеттеры на тип b имя животного
     public String getAnimalType() {

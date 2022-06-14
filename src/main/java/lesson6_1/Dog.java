@@ -17,6 +17,7 @@ public class Dog extends Animal { // создаём класс Dog - насле�
 
     }
 
+
     public Dog(String nickname) {
         this(nickname, "Пёс", 500, 150, 1, 1);
     }
