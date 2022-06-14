@@ -28,8 +28,7 @@ public abstract class Animal<runningTrack> {
     }
 
 
-
-    public void doRun(/*runningTrack*/) { // метод бег - для обоих животных
+    public void doRun() { // метод бег - для обоих животных
         runningTrack = random.nextInt(runningLimit) + 100; // рандомизируем длину пробежки
         if (this.runningTrack < runningLimit) {
             System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack); // выводим, сколько пробежало животное
@@ -57,30 +56,5 @@ public abstract class Animal<runningTrack> {
         return nickname;
     }
 
-    public int getRunningTrack() {
-        return runningTrack;
-    }
 
-    public void setAnimalType(String animalType) {
-        this.animalType = animalType;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-
-    public int getRunningLimit() {
-        return runningLimit;
-    }
-
-    public void setRunningLimit(int runningLimit) {
-        this.runningLimit = runningLimit;
-    }
-
-    public void setRunningTrack(int runningTrack) {
-        this.runningTrack = runningTrack;
-
-
-    }
 }

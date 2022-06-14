@@ -7,16 +7,15 @@ public class Dog extends Animal { // создаём класс Dog - насле�
        private int swimmingLimit; // лимит возможностей собаки для заплыва
     Random random = new Random();
 
-    public Dog(String nickname, String animalType, int runningLimit, int swimmingLimit, int runningTrack, int swimmingTrack) { // создаём конструктор с перечнем свойств собаки,
-        super(nickname, animalType, runningLimit, runningTrack);
-        this.swimmingTrack = swimmingTrack;  // длина заплыва - привязка
+    public Dog(String nickname, int swimmingLimit, int runningTrack/*, int swimmingTrack*/) { // создаём конструктор с перечнем свойств собаки,
+        super(nickname, "Пёс", 500, runningTrack);
+//        this.swimmingTrack = swimmingTrack;  // длина заплыва - привязка
         this.swimmingLimit = swimmingLimit; // лимит возможностей собаки для заплыва - привязка
 
     }
 
-
     public Dog(String nickname) {
-        this(nickname, "Пёс", 500, 150, 0, 0);
+        this(nickname, 150, 0);
         /*this.runningTrack = random.nextInt(runningLimit);*/
         /*this.swimmingTrack = random.nextInt(swimmingLimit);*/
     }
@@ -38,8 +37,6 @@ public class Dog extends Animal { // создаём класс Dog - насле�
         }
     }
 
-
-
     public int getSwimmingLimit() {
         return swimmingLimit;
     }
@@ -47,6 +44,5 @@ public class Dog extends Animal { // создаём класс Dog - насле�
     public void setSwimmingLimit(int swimmingLimit) {
         this.swimmingLimit = swimmingLimit;
     }
-
 
 }

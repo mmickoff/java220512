@@ -1,23 +1,13 @@
 package lesson6_1;
 
-import java.util.Arrays;
-import java.util.Random;
-
-
 public class Main {
     public static void main(String[] args) {
-
-        Random random = new Random();
 
         Cat catMarsiсk = new Cat("Марсик");
         Cat catFuntick = new Cat("Фунтик");
 
         Dog dogBobiсk = new Dog("Бобик");
         Dog dogTuziсk = new Dog("Тузик");
-
-       /* catMarsiсk.setRunningTrack(random.nextInt());
-        catFuntick.setRunningTrack(random.nextInt());*/
-
 
 //        catMarsiсk.printInfo();
 //        catFuntick.printInfo();
@@ -46,7 +36,6 @@ public class Main {
             System.out.printf(++i + ") ");
             animal.printInfo();
         }
-
     }
 }
 
