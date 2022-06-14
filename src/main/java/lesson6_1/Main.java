@@ -11,6 +11,10 @@ public class Main {
         Dog dogBobiсk = new Dog("Бобик");
         Dog dogTuziсk = new Dog("Тузик");
 
+        catMarsiсk.setRunningTrack(10000);
+        catFuntick.setRunningTrack(500);
+
+
 //        catMarsiсk.printInfo();
 //        catFuntick.printInfo();
         catMarsiсk.doAction();
