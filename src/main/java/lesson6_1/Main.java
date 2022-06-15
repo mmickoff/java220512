@@ -21,6 +21,7 @@ public class Main {
         for (int i = 0; i < animals.length; i++) {
             System.out.printf(i + 1 + ") " + animals[i]);
             System.out.println();
+
         }
 
         System.out.printf("...или...%n");

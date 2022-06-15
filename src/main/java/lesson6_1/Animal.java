@@ -19,8 +19,7 @@ public abstract class Animal {
     }
 
     public void doAction() {
-        doRun(/*runningTrack*/);
-
+        doRun();
     }
 
     public void doRun() { // метод бег - для обоих животных

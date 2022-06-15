@@ -3,7 +3,6 @@ package lesson6_1;
 import java.util.Random;
 
 public class Dog extends Animal { // создаём класс Dog - наследника от Animal
-       private int swimmingTrack; // длина заплыва
        private int swimmingLimit; // лимит возможностей собаки для заплыва
     Random random = new Random();
 
@@ -25,11 +24,11 @@ public class Dog extends Animal { // создаём класс Dog - насле�
           }
 
     public void doSwim() { // метод плавание - для обоих животных
-        swimmingTrack = Math.abs(random.nextInt(swimmingLimit)) + 25; // рандомизируем длину заплыва
-        if (this.swimmingTrack < swimmingLimit) {
-            System.out.printf("%s %s проплыл %s метров%n", getAnimalType(), getNickname(), this.swimmingTrack); // выводим, сколько проплыло животное
+        int swimmingTrack = random.nextInt(swimmingLimit) + 25;/*Math.abs(random.nextInt(swimmingLimit)) + 25*/ // рандомизируем длину заплыва
+        if (swimmingTrack < swimmingLimit) {
+            System.out.printf("%s %s проплыл %s метров%n", getAnimalType(), getNickname(), swimmingTrack); // выводим, сколько проплыло животное
         } else {
-            System.out.printf("%s %s не может проплыть %s метров%n", getAnimalType(), getNickname(), this.swimmingTrack);
+            System.out.printf("%s %s не может проплыть %s метров%n", getAnimalType(), getNickname(), swimmingTrack);
         }
     }
 

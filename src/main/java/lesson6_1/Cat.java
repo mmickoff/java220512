@@ -8,6 +8,7 @@ public class Cat extends Animal {
 
     public Cat(String nickname) {
         this(nickname, "Кот");
+
     }
 
     @Override
