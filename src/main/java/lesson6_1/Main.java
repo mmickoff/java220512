@@ -17,7 +17,6 @@ public class Main {
 
         System.out.println();
         Animal[] animals = {catFuntick, catMarsiсk, dogBobiсk, dogTuziсk};
-        /* for (int i = 0; i < animals.length; i++) {*/
         System.out.printf("В соревнованиях участвовало всего " + animals.length + " зверюг:%n");
         for (int i = 0; i < animals.length; i++) {
             System.out.printf(i + 1 + ") " + animals[i]);
