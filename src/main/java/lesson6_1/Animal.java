@@ -7,17 +7,17 @@ public abstract class Animal<runningTrack> {
     private String animalType; // тип животного - Собака или Кот
     private String nickname; // имя зверюшки
     private int runningLimit;
-    private int runningTrack; // дистанция забега
+//    private int runningTrack; // дистанция забега
     /*private int swimmingTrack;*/ // дистаниция заплыва - вводим её только в Dog, чтобы не передавать в Cat
 
     Random random = new Random(); // рандомизатор в классе
 
 
-    public Animal(String nickname, String animalType, int runningLimit, int runningTrack/*, int swimmingTrack*/) { //конструктор
+    public Animal(String nickname, String animalType, int runningLimit/*, int runningTrack*//*, int swimmingTrack*/) { //конструктор
         this.animalType = animalType;
         this.nickname = nickname;
         this.runningLimit = runningLimit;
-        this.runningTrack = runningTrack;
+//        this.runningTrack = runningTrack;
 //      this.swimmingTrack = swimmingTrack; // оставляем для появления в Dog
 
     }
@@ -29,8 +29,8 @@ public abstract class Animal<runningTrack> {
 
 
     public void doRun() { // метод бег - для обоих животных
-        runningTrack = random.nextInt(runningLimit) + 100; // рандомизируем длину пробежки
-        if (this.runningTrack < runningLimit) {
+        int runningTrack = random.nextInt(runningLimit) + 100; // рандомизируем длину пробежки
+        if (/*this.*/runningTrack < runningLimit) {
             System.out.printf("%s %s пробежал %s метров%n", animalType, nickname, runningTrack); // выводим, сколько пробежало животное
         } else {
             System.out.printf("%s %s не мог пробежать %s метров%n", animalType, nickname, runningTrack);
