@@ -9,13 +9,9 @@ public class Main {
         Dog dogBobiсk = new Dog("Бобик");
         Dog dogTuziсk = new Dog("Тузик");
 
-//        catMarsiсk.printInfo();
-//        catFuntick.printInfo();
         catMarsiсk.doAction();
         catFuntick.doAction();
 
-//        dogBobiсk.printInfo();
-//        dogTuziсk.printInfo();
         dogBobiсk.doAction();
         dogTuziсk.doAction();
 

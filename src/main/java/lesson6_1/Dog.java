@@ -16,7 +16,6 @@ public class Dog extends Animal { // создаём класс Dog - насле�
 
     public Dog(String nickname) {
         this(nickname, 150/*, 0*/);
-
     }
 
     @Override
