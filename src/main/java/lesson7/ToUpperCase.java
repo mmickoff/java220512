@@ -7,8 +7,13 @@ public class ToUpperCase {
         Scanner in = new Scanner(System.in);
         System.out.print("Ведите слово - ");
         String a1 = in.next();
+//        a1 = a1.trim();
+//        System.out.println(a1.substring(0, 1).toUpperCase() + a1.substring(1).toLowerCase());
+
         a1 = a1.trim();
-        System.out.println(a1.substring(0, 1).toUpperCase() + a1.substring(1).toLowerCase());
+        String bigLitera = a1.substring(0, 1);
+        System.out.println(bigLitera.toUpperCase() + a1.substring(1).toLowerCase());
+
     }
 }
 
