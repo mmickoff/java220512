@@ -9,28 +9,44 @@ public class Cat {
     private int eatFoodAtaTime; // это количество съедает кот за раз
     private int saturationFood; // столько съел кот всего на данный момент - приращивается на EatFoodAtaTime
     private int fullSaturation; // столько нужно еды до полной сытости
-    private boolean satietyOrNo; // наелся кот или нет?
+    private boolean satiety; // наелся кот или нет?
 
 
-    public Cat(String name, int fullSaturation) {
+    public Cat(String name, int eatFoodAtaTime) {
         this.name = name;
-        this.fullSaturation = fullSaturation;
-        this.saturationFood = 0;
-        this.satietyOrNo = false;
-//        this.eatFoodAtaTime = 0;
+        this.eatFoodAtaTime = eatFoodAtaTime;
+        this.fullSaturation = this.eatFoodAtaTime *3;
+        this.saturationFood = 0; // кот еще ничего не ел - насыщение = 0
+        this.satiety = false; // кот не сытый = сытость =  false
+    }
+
+    public int eatFoodAtaTime(){
+       this.eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation) + 2;
+        return eatFoodAtaTime;
     }
 
     public void eat(Plate plate) {
-        int eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation);
-        plate.decreaseFood(eatFoodAtaTime);
-        int allFoodsEaten = plate.getAllFoodsEaten();
-        System.out.printf("Котик %s съел сейчас %s корма и за всё время корма в количестве %s.%n", name, eatFoodAtaTime, allFoodsEaten/*saturationFood*/);
+        if (this.satiety){
+            return;
+        }
+        if(plate.decreaseFood(this.eatFoodAtaTime)) {
+            eatFoodAtaTime();
+            allFoodsEaten();
+            ;
+//        int allFoodsEaten = plate.getAllFoodsEaten();
 
+           /* System.out.printf("Котик %s за всё время съел корма в количестве %s.%n", name, *//*eatFoodAtaTime, *//**//*allFoodsEaten*//*saturationFood);*//*%s съел сейчас %s корма и*/
+        }
+    }
+
+    public boolean satietyOrNo(){
+        return satiety;
     }
 
     public int allFoodsEaten() {
+        eatFoodAtaTime();
         saturationFood += eatFoodAtaTime;
-        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
+        System.out.printf("Котик %s сейчас съел %s шт порций корма и за всё время порций корма в количестве %s шт.%n", name, eatFoodAtaTime, saturationFood);
         return saturationFood;
     }
 
@@ -54,8 +70,8 @@ public class Cat {
         return fullSaturation;
     }
 
-    public boolean isSatietyOrNo() {
-        return satietyOrNo;
+    public boolean isSatiety() {
+        return satiety;
     }
 
 }

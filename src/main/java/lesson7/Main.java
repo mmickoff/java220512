@@ -20,13 +20,14 @@ public class Main {
         Thread.sleep(1000);
 
         for (Cat catsis : cats) {
-            while (!catsis.isSatietyOrNo() && plate.getPutFoodCount() >= catsis.getEatFoodAtaTime()) {
+            while (!catsis.satietyOrNo() && plate.getPutFoodCount() >= catsis.getEatFoodAtaTime()) {
+                for (Cat catsis : cats){ catsis.eat(plate);}
                 plate.printInfo();
-                catsis.eat(plate);
+
             }
         }
         for (Cat catsis : cats) {
-            if (catsis.isSatietyOrNo()) {
+            if (catsis.satietyOrNo()) {
                 System.out.printf("%s сытый.", catsis.getName());
                 System.out.println();
             } else {
