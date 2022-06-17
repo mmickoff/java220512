@@ -6,10 +6,10 @@ public class Cat {
 
 
     private String name; // имя кота
-    private int EatFoodAtaTime; // это количество съедает кот за раз
+    private int eatFoodAtaTime; // это количество съедает кот за раз
     private int saturationFood; // столько съел кот всего на данный момент - приращивается на EatFoodAtaTime
     private int fullSaturation; // столько нужно еды до полной сытости
-    private boolean satietyOrNo; // сыт кот или нет?
+    private boolean satietyOrNo; // наелся кот или нет?
 
 
     public Cat(String name, int fullSaturation) {
@@ -20,17 +20,40 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        EatFoodAtaTime = ThreadLocalRandom.current().nextInt();
-        plate.decreaseFood(EatFoodAtaTime);
-        System.out.printf("Котик %s съел корма в количестве %s.%n", name, EatFoodAtaTime);
+        eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation) + 8;
+        plate.decreaseFood(eatFoodAtaTime);
+        allFoodsEaten();
+        System.out.printf("Котик %s съел сейчас %s корма и за всё время корма в количестве %s.%n", name, eatFoodAtaTime, saturationFood);
 
     }
 
-    public void allFoodsEaten(Plate plate) {
-
-        plate.allFoodsEaten(EatFoodAtaTime);
-        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
+    public int allFoodsEaten() {
+        /*saturationFood += */eatFoodAtaTime ++;
+        return saturationFood;
+//        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
     }
 
+    public int getSaturationFood() {
+        return saturationFood;
+    }
 
+    public void setSaturationFood(int saturationFood) {
+        this.saturationFood = saturationFood;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getEatFoodAtaTime() {
+        return eatFoodAtaTime;
+    }
+
+    public int getFullSaturation() {
+        return fullSaturation;
+    }
+
+    public boolean isSatietyOrNo() {
+        return satietyOrNo;
+    }
 }

@@ -6,6 +6,8 @@ public class Plate {
 
     public Plate(int putFoodCount) {
         this.putFoodCount = putFoodCount;
+
+        this.allFoodsEaten = 0;
     }
 
     public void printInfo() {
@@ -18,19 +20,22 @@ public class Plate {
                 ;
     }
 
+    public void decreaseFood(int eatFoodAtaTime) {
+       putFoodCount -= eatFoodAtaTime;
+    }
+
+    public void allFoodsEaten(int eatFoodAtaTime) {
+
+       allFoodsEaten += eatFoodAtaTime;
+    }
+
     public int getPutFoodCount() {
         return putFoodCount;
     }
 
-    public void decreaseFood(int catEatFoodCount) {
-       putFoodCount -= catEatFoodCount;
-    }
-
-    public void allFoodsEaten(int catEatFoodCount) {
-        allFoodsEaten += catEatFoodCount;
-    }
-
-    public int getCatAllFoodsEaten() {
+    public int getAllFoodsEaten() {
         return allFoodsEaten;
     }
+
+
 }
