@@ -3,10 +3,12 @@ package lesson7;
 public class Plate {
     private int putFoodCount; // всего положено в миску
     private int allFoodsEaten; // всего съедено из миски
+    private int eatFoodAtaTime;
 
     public Plate(int putFoodCount) {
         this.putFoodCount = putFoodCount;
         this.allFoodsEaten = 0;
+        this.eatFoodAtaTime = eatFoodAtaTime;
     }
 
     public void printInfo() {
@@ -20,11 +22,12 @@ public class Plate {
     }
 
     public void decreaseFood(int eatFoodAtaTime) {
-       putFoodCount -= eatFoodAtaTime;
+        putFoodCount -= eatFoodAtaTime;
     }
 
-    public void allFoodsEaten(int eatFoodAtaTime) {
-       allFoodsEaten += eatFoodAtaTime;
+    public int allFoodsEaten() {
+        return allFoodsEaten++;
+//        decreaseFood(eatFoodAtaTime);
     }
 
     public int getPutFoodCount() {
@@ -34,6 +37,9 @@ public class Plate {
     public int getAllFoodsEaten() {
         return allFoodsEaten;
     }
-
-
 }
+
+//    public int getEatFoodAtaTime() {
+//        return eatFoodAtaTime;
+//    }
+//}

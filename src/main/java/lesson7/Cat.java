@@ -17,29 +17,30 @@ public class Cat {
         this.fullSaturation = fullSaturation;
         this.saturationFood = 0;
         this.satietyOrNo = false;
+//        this.eatFoodAtaTime = 0;
     }
 
     public void eat(Plate plate) {
-        eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation);
+        int eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation);
         plate.decreaseFood(eatFoodAtaTime);
-        allFoodsEaten();
-        System.out.printf("Котик %s съел сейчас %s корма и за всё время корма в количестве %s.%n", name, eatFoodAtaTime, saturationFood);
+        int allFoodsEaten = plate.getAllFoodsEaten();
+        System.out.printf("Котик %s съел сейчас %s корма и за всё время корма в количестве %s.%n", name, eatFoodAtaTime, allFoodsEaten/*saturationFood*/);
 
     }
 
     public int allFoodsEaten() {
-        /*saturationFood += */eatFoodAtaTime ++;
-        return saturationFood;
-//        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
-    }
-
-    public int getSaturationFood() {
+        saturationFood += eatFoodAtaTime;
+        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
         return saturationFood;
     }
 
-    public void setSaturationFood(int saturationFood) {
-        this.saturationFood = saturationFood;
-    }
+//    public int getSaturationFood() {
+//        return saturationFood;
+//    }
+
+//    public void setSaturationFood(int saturationFood) {
+//        this.saturationFood = saturationFood;
+//    }
 
     public String getName() {
         return name;
@@ -56,4 +57,6 @@ public class Cat {
     public boolean isSatietyOrNo() {
         return satietyOrNo;
     }
+
 }
+

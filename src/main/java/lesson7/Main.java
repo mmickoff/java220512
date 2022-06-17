@@ -1,29 +1,49 @@
 package lesson7;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        Cat cat = new Cat("Мурзик", 35);
-        Plate plate = new Plate(50);
+        Cat[] cats = {
+                new Cat("Murzik", 4),
+                new Cat("Barsik", 3),
+                new Cat("Markiz", 5),
+                new Cat("Graf", 6),
+                new Cat("Flash", 3),
+                new Cat("Vasiliy", 5),
+        };
+        System.out.println("Положите еду в миску в количестве (указать, сколько порций в штуках):");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        Plate plate = new Plate(a);
+        Thread.sleep(1000);
 
-        plate.printInfo();
-
-        cat.eat(plate);
-
-        cat.allFoodsEaten();
-
-        while (plate.getPutFoodCount() > 0) {
-            cat.eat(plate);
-            plate.allFoodsEaten(plate.getAllFoodsEaten());
-            plate.printInfo();
-            Thread.sleep(1000);
-
+        for (Cat catsis : cats) {
+            while (!catsis.isSatietyOrNo() && plate.getPutFoodCount() >= catsis.getEatFoodAtaTime()) {
+                plate.printInfo();
+                catsis.eat(plate);
+            }
         }
-        if(plate.getPutFoodCount() <= 0 ) {
-//            cat.eat(plate) -= plate.getPutFoodCount();
-            System.out.println("Еда в миске закончилась, коты не сыты - положите ещё...");
+        for (Cat catsis : cats) {
+            if (catsis.isSatietyOrNo()) {
+                System.out.printf("%s сытый.", catsis.getName());
+                System.out.println();
+            } else {
+                System.out.println("Еда в миске закончилась, коты не сыты - положите ещё...");
+            }
         }
+//        plate.getPutFoodCount();
+//            cat.allFoodsEaten(/*plate*//*.getAllFoodsEaten()*/);
+//
+//            if (plate.getPutFoodCount() > 0) {
+//                cat.eat(plate);
+//                cat.allFoodsEaten(/*plate.getAllFoodsEaten()*/);
+//                plate.printInfo();
+
 
     }
 
 }
+
+
