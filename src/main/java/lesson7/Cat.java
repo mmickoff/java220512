@@ -20,7 +20,7 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation) + 8;
+        eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation);
         plate.decreaseFood(eatFoodAtaTime);
         allFoodsEaten();
         System.out.printf("Котик %s съел сейчас %s корма и за всё время корма в количестве %s.%n", name, eatFoodAtaTime, saturationFood);

@@ -6,7 +6,6 @@ public class Plate {
 
     public Plate(int putFoodCount) {
         this.putFoodCount = putFoodCount;
-
         this.allFoodsEaten = 0;
     }
 
@@ -25,7 +24,6 @@ public class Plate {
     }
 
     public void allFoodsEaten(int eatFoodAtaTime) {
-
        allFoodsEaten += eatFoodAtaTime;
     }
 
