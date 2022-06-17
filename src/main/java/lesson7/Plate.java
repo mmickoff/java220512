@@ -1,12 +1,11 @@
 package lesson7;
 
 public class Plate {
-    private int foodCount;
-    private int catAllFoodsEaten;
+    private int putFoodCount; // всего положено в миску
+    private int allFoodsEaten; // всего съедено из миски
 
-    public Plate(int foodCount) {
-
-        this.foodCount = foodCount;
+    public Plate(int putFoodCount) {
+        this.putFoodCount = putFoodCount;
     }
 
     public void printInfo() {
@@ -15,23 +14,23 @@ public class Plate {
 
     @Override
     public String toString() {
-        return "В миске положена порция в размере " + foodCount + "."
+        return "В миске положена порция в размере " + putFoodCount + "."
                 ;
     }
 
-    public int getFoodCount() {
-        return foodCount;
+    public int getPutFoodCount() {
+        return putFoodCount;
     }
 
     public void decreaseFood(int catEatFoodCount) {
-       foodCount -= catEatFoodCount;
+       putFoodCount -= catEatFoodCount;
     }
 
     public void allFoodsEaten(int catEatFoodCount) {
-        catAllFoodsEaten += catEatFoodCount;
+        allFoodsEaten += catEatFoodCount;
     }
 
     public int getCatAllFoodsEaten() {
-        return catAllFoodsEaten;
+        return allFoodsEaten;
     }
 }

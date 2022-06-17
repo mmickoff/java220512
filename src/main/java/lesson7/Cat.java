@@ -6,45 +6,31 @@ public class Cat {
 
 
     private String name; // имя кота
-    private int satietey; // уровень сытости кота
-    private int catEatFoodCount; // съедает кот за раз
+    private int EatFoodAtaTime; // это количество съедает кот за раз
+    private int saturationFood; // столько съел кот всего на данный момент - приращивается на EatFoodAtaTime
+    private int fullSaturation; // столько нужно еды до полной сытости
+    private boolean satietyOrNo; // сыт кот или нет?
 
-    private int catAllFoodsEaten; // всего съел кот
 
-
-    public Cat(String name, int satietey, int catAllFoodsEaten) {
-
+    public Cat(String name, int fullSaturation) {
         this.name = name;
-        this.satietey = satietey;
-        this.catAllFoodsEaten = catAllFoodsEaten;
-
+        this.fullSaturation = fullSaturation;
+        this.saturationFood = 0;
+        this.satietyOrNo = false;
     }
 
     public void eat(Plate plate) {
-        catEatFoodCount = ThreadLocalRandom.current().nextInt(satietey);
-        plate.decreaseFood(catEatFoodCount);
-        System.out.printf("Котик %s съел корма в количестве %s.%n", name, catEatFoodCount);
+        EatFoodAtaTime = ThreadLocalRandom.current().nextInt();
+        plate.decreaseFood(EatFoodAtaTime);
+        System.out.printf("Котик %s съел корма в количестве %s.%n", name, EatFoodAtaTime);
 
     }
 
     public void allFoodsEaten(Plate plate) {
-//        catEatFoodCount = ThreadLocalRandom.current().nextInt(satietey);
-//        int catEatFoodCount = this.catEatFoodCount;
-//        catAllFoodsEaten =
-        plate.allFoodsEaten(catEatFoodCount);
-        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, catAllFoodsEaten);
+
+        plate.allFoodsEaten(EatFoodAtaTime);
+        System.out.printf("Котик %s съел за всё время корма в количестве %s.%n", name, saturationFood);
     }
 
-    public void satietyOfCat () {
 
-
-    }
-
-    public int getSatietey() {
-        return satietey;
-    }
-
-    public int getCatEatFoodCount() {
-        return catEatFoodCount;
-    }
 }
