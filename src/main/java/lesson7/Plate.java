@@ -17,7 +17,7 @@ public class Plate {
 
     @Override
     public String toString() {
-        return "В миске положена порция в размере " + putFoodCount + "."
+        return "Сейчас в миске находится еда в количестве " + putFoodCount + "шт порций."
                 ;
     }
 

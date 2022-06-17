@@ -21,9 +21,8 @@ public class Main {
 
         for (Cat catsis : cats) {
             while (!catsis.satietyOrNo() && plate.getPutFoodCount() >= catsis.getEatFoodAtaTime()) {
-                for (Cat catsis : cats){ catsis.eat(plate);}
                 plate.printInfo();
-
+                catsis.eat(plate);
             }
         }
         for (Cat catsis : cats) {

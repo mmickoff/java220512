@@ -12,10 +12,10 @@ public class Cat {
     private boolean satiety; // наелся кот или нет?
 
 
-    public Cat(String name, int eatFoodAtaTime) {
+    public Cat(String name, /*int eatFoodAtaTime, */int fullSaturation) {
         this.name = name;
-        this.eatFoodAtaTime = eatFoodAtaTime;
-        this.fullSaturation = this.eatFoodAtaTime *3;
+        this.eatFoodAtaTime = eatFoodAtaTime();
+        this.fullSaturation = fullSaturation;
         this.saturationFood = 0; // кот еще ничего не ел - насыщение = 0
         this.satiety = false; // кот не сытый = сытость =  false
     }
