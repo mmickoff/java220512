@@ -11,24 +11,25 @@ public class Plate {
     }
     //       this.allFoodsEaten = 0;
 //        this.eatFoodAtaTime = eatFoodAtaTime;
+
+    public boolean decreaseFood(int eatFoodAtaTime) {
+        if (eatFoodAtaTime > putFoodCount) {
+//            putFoodCount = Math.abs(eatFoodAtaTime - putFoodCount);
+            return false;
+        } else {
+            putFoodCount -= eatFoodAtaTime;
+            return true;
+        }
+    }
+
     public void printInfo() {
         System.out.println(this);
     }
 
     @Override
     public String toString() {
-        return "Сейчас в миске находится еда в количестве " + putFoodCount + "шт порций."
+        return "Теперь в миске находится еда в количестве " + putFoodCount + "шт порций."
                 ;
-    }
-
-    public boolean decreaseFood(int eatFoodAtaTime) {
-        if (eatFoodAtaTime > putFoodCount) {
-            putFoodCount = Math.abs(eatFoodAtaTime - putFoodCount);
-            return false;
-        } else {
-            putFoodCount -= eatFoodAtaTime;
-            return true;
-        }
     }
 
     public int getPutFoodCount() {

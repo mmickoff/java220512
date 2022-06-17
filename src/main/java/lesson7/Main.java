@@ -6,12 +6,12 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         Cat[] cats = {
-                new Cat("Murzik", 4),
-                new Cat("Barsik", 3),
-                new Cat("Markiz", 5),
-                new Cat("Graf", 6),
-                new Cat("Flash", 3),
-                new Cat("Vasiliy", 5),
+                new Cat("Murzik", 12),
+                new Cat("Barsik", 13),
+                new Cat("Markiz", 15),
+                new Cat("Graf", 16),
+                new Cat("Flash", 13),
+                new Cat("Vasiliy", 15),
         };
         System.out.println("Положите еду в миску в количестве (указать, сколько порций в штуках):");
         Scanner sc = new Scanner(System.in);
@@ -27,10 +27,10 @@ public class Main {
         }
         for (Cat catsis : cats) {
             if (catsis.satietyOrNo()) {
-                System.out.printf("%s сытый.", catsis.getName());
+                System.out.printf("Кот %s сытый.", catsis.getName());
                 System.out.println();
             } else {
-                System.out.println("Еда в миске закончилась, коты не сыты - положите ещё...");
+                System.out.printf("Еда в миске закончилась, кот %s не сыт - положите ещё...%n", catsis.getName());
             }
         }
 //        plate.getPutFoodCount();

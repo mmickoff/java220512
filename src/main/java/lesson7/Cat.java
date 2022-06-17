@@ -20,11 +20,6 @@ public class Cat {
         this.satiety = false; // кот не сытый = сытость =  false
     }
 
-    public int eatFoodAtaTime(){
-       this.eatFoodAtaTime = ThreadLocalRandom.current().nextInt(fullSaturation) + 2;
-        return eatFoodAtaTime;
-    }
-
     public void eat(Plate plate) {
         if (this.satiety){
             return;
@@ -39,8 +34,15 @@ public class Cat {
         }
     }
 
-    public boolean satietyOrNo(){
+    public int eatFoodAtaTime(){
+        this.eatFoodAtaTime = ThreadLocalRandom.current().nextInt(Math.abs(fullSaturation) + 2);
+        return eatFoodAtaTime;
+    }
+
+    public boolean satietyOrNo() {
+        if (allFoodsEaten() > fullSaturation)
         return satiety;
+            return true;
     }
 
     public int allFoodsEaten() {
