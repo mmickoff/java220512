@@ -12,8 +12,8 @@ public class HomeWork3 {
         fillDiagonal();
         finMax(z);
         finMin(z);
-        checkBalance(new int[]{2, 5, 4, 4, 7, 7});
-        arrayShift();
+        checkBalance(new int[]{2, 5, 4, 4, 8, 7});
+        arrayShift(new int[]{8, 44, 6, -11, 4, 2, -8, 6, 29, 30, 34, 3, 6, -9});
     }
 
 
@@ -151,23 +151,27 @@ public class HomeWork3 {
 // Задача 8*** - Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным), при этом метод должен сместить все элементы массива на n позиций. Элементы смещаются циклично.  Для усложнения задачи нельзя пользоваться вспомогательными массивами.   Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2   (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете выбирать сами.
 //
 
-    private static void arrayShift() {
+    private static void arrayShift(int[] b) {
+//        int[] b = {8, 44, 6, -11, 4, 2, -8, 6, 29, 30, 34, 3, 6, -9};
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите размер массива");
-        int i1 = scanner.nextInt();
-        int[] b = new int[i1];
+//        System.out.println("Введите массив");
+//        {8, 44, 6, -11, 4, 2, -8, 6, 29, 30, 34, 3, 6, -9};
         System.out.println("Введите смещение");
-        int a1 = -scanner.nextInt();
+        int a1 = scanner.nextInt();
+        int a2 = a1 % b.length;
         for (int i = 0; i < b.length; i++) {
-            int a2 = a1 % i1;
-            b[i] = i + a2;
-            if (b[i] > b.length - 1) {
-                b[i] = b[i] - b.length;
+            int i1;
+            if (i - a2 > b.length - 1) {
+                i1 = i - a2 - b.length;
             }
-            if (b[i] < 0) {
-                b[i] = b[i] + b.length;
+            else if (i - a2 < 0) {
+                i1 = i - a2 + b.length;
+            }else if (i - a2 >= 0 & i - a2 < b.length) {
+                i1 = i - a2;
+            }else{
+                return;
             }
-            System.out.print(b[i] + "; ");
+            System.out.print(b[i1] + "; ");
 //            System.out.println();
         }
 
